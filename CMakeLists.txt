@@ -10,6 +10,10 @@ add_library(pdcurses
             ${MAIN_SOURCES})
 
 # Export for external inclusion
+install(TARGETS pdcurses
+    LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib
+    )
 export(TARGETS pdcurses FILE pdcurses-targets.cmake)
 set(PDCURSES_TARGETS_FILE ${CMAKE_BINARY_DIR}/pdcurses-targets.cmake)
 configure_file(pdcurses-config.cmake.in pdcurses-config.cmake)
